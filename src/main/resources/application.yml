@@ -6,9 +6,9 @@ logging:
 spring:
     datasource:
         driverClassName: com.mysql.cj.jdbc.Driver
-        password: 2350
+        password: 
         url: jdbc:mysql://localhost:3306/gira_db?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
-        username: root
+        username: 
     jpa:
         hibernate:
             ddl-auto: update
