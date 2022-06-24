@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleafe.org">
+
+<head th:replace="fragments/navbar :: head">
+
+    <title>Header</title></head>
+<body>
+<div th:replace="fragments/navbar :: navbar">
+    Navbar
+</div>
+
+<main class="content-wrap">
+    <h1 class="text-center mt-2"><span class="badge badge-pill badge-dark">Register</span></h1>
+    <hr class="hr-3 w-25 bg-white"/>
+    <form class="mx-auto w-25 bg-blur" th:method="post" th:action="@{/users/register}"
+          th:object="${userRegisterBindingModel}">
+        <div class="form-group">
+            <div class="label-holder textCol d-flex justify-content-center">
+                <label for="username" class="h4 mb-2">Username</label>
+            </div>
+            <input th:field="*{username}" th:errorclass="is-invalid" type="text" class="form-control" id="username"
+                   name="username"/>
+            <small class="invalid-feedback bg-danger text-light rounded">Username error message</small>
+        </div>
+        <div class="form-group">
+            <div class="label-holder textCol d-flex justify-content-center">
+                <label for="email" class="h4 mb-2">Email</label>
+            </div>
+            <input th:field="*{email}" th:errorclass="is-invalid" type="email" class="form-control" id="email"
+                   name="email"/>
+            <small class="invalid-feedback bg-danger text-light rounded">Email error message</small>
+        </div>
+        <div class="form-group">
+            <div class="label-holder  textCol d-flex justify-content-center">
+                <label for="password" class="h4 mb-2">Password</label>
+            </div>
+            <input th:field="*{password}" th:errorclass="is-invalid" type="password" class="form-control" id="password"
+                   name="password"/>
+            <small class="invalid-feedback bg-danger text-light rounded">Password error message</small>
+        </div>
+        <div class="form-group">
+            <div class="label-holder  textCol d-flex justify-content-center">
+                <label for="confirmPassword" class="h4 mb-2">Confirm Password</label>
+            </div>
+            <input th:field="*{confirmPassword}" th:errorclass="is-invalid" type="password" class="form-control"
+                   id="confirmPassword" name="confirmPassword"/>
+            <small class="invalid-feedback bg-danger text-light rounded">Password error message</small>
+        </div>
+
+        <div class="button-holder d-flex justify-content-center">
+            <button type="submit" class="button btn-warning  mb-3" value="Register">Register</button>
+        </div>
+    </form>
+</main>
+<footer class="footer">
+    <div class="container-fluid text-center">
+        <div class="footer-background h6">
+            &copy; Spring team 2020. All rights reserved.
+        </div>
+    </div>
+</footer>
+</div>
+
+
+</body>
+
+</html>
